@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jjakubowski.gameOfLife.ControllerMainView">
+    <top>
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="CONWAYS GAME OF LIFE" BorderPane.alignment="CENTER" id="titleText">
+            <BorderPane.margin>
+                <Insets bottom="60.0" top="50.0" />
+            </BorderPane.margin>
+        </Text>
+    </top>
+    <center>
+        <VBox alignment="CENTER" fillWidth="false" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="TOP_CENTER">
+            <children>
+                <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+                    <children>
+                        <Label text="HEIGHT:" />
+                        <TextField alignment="CENTER" text="400" />
+                    </children>
+                </VBox>
+                <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+                    <children>
+                        <Label text="WIDTH:" />
+                        <TextField alignment="CENTER" text="600" />
+                    </children>
+                </VBox>
+                <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+                    <children>
+                        <Label text="GRID SIZE:" />
+                        <TextField alignment="CENTER" text="25" />
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </center>
+    <bottom>
+        <Button mnemonicParsing="false" text="START!" BorderPane.alignment="CENTER" onAction="#start">
+            <BorderPane.margin>
+                <Insets bottom="50.0" />
+            </BorderPane.margin>
+        </Button>
+    </bottom>
+    <right>
+        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="250.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label text="GAME PATTERNS:" />
+                <VBox alignment="CENTER" prefHeight="200.0" prefWidth="115.0" spacing="80.0" VBox.vgrow="ALWAYS">
+                    <children>
+                        <fx:define>
+                            <ToggleGroup fx:id="patternsToggleGroup"/>
+                        </fx:define>
+                        <RadioButton mnemonicParsing="false" text="RANDOM" toggleGroup="$patternsToggleGroup" selected="true"/>
+                        <RadioButton mnemonicParsing="false" text="OPTION 2" toggleGroup="$patternsToggleGroup"/>
+                        <RadioButton mnemonicParsing="false" text="OPTION 3" toggleGroup="$patternsToggleGroup"/>
+                        <RadioButton mnemonicParsing="false" text="OPTION 4" toggleGroup="$patternsToggleGroup"/>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </right>
+    <left>
+        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="250.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label text="COLORWAYS:" />
+                <VBox fx:id="vBox1" alignment="CENTER" prefHeight="200.0" prefWidth="115.0" spacing="80.0" VBox.vgrow="ALWAYS">
+                    <children>
+                        <fx:define>
+                            <ToggleGroup fx:id="colorToggleGroup"/>
+                        </fx:define>
+                        <RadioButton mnemonicParsing="false" text="GREEN-BLACK" toggleGroup="$colorToggleGroup" selected="true"/>
+                        <RadioButton mnemonicParsing="false" text="BLUE-GREY" toggleGroup="$colorToggleGroup" />
+                        <RadioButton mnemonicParsing="false" text="RED-GREY" toggleGroup="$colorToggleGroup" />
+                        <RadioButton mnemonicParsing="false" text="BLACK-WHITE" toggleGroup="$colorToggleGroup" />
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </left>
+</BorderPane>

@@ -1,0 +1,57 @@
+.root {
+
+    -fx-background-color: black;
+
+}
+
+RadioButton {
+    -fx-text-fill: black;
+    -fx-font-family: 'Consolas';
+    -fx-font-weight: bold;
+    -fx-font-size: 20px;
+    -fx-background-color: blue;
+    -fx-min-width: 175;
+}
+
+Button {
+    -fx-background-color: blue ;
+    -fx-font-family: 'Consolas';
+    -fx-font-size: 30;
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+}
+
+Label {
+
+    -fx-font-family: 'Consolas';
+    -fx-text-fill: blue;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+
+}
+
+CheckBox {
+    -fx-font-family: 'Consolas';
+    -fx-text-fill: blue;
+}
+
+TextField {
+    -fx-text-fill: black;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-background-color: blue;
+    -fx-min-width: 150;
+}
+.radio-button:selected .radio .dot {
+    -fx-background-color: black;
+    -fx-background-insets: 0;
+}
+
+
+#titleText {
+    -fx-font-family: 'Consolas';
+    -fx-font-size: 40;
+    -fx-stroke: blue;
+    -fx-stroke-width: 3;
+}
+
