@@ -9,12 +9,12 @@ RadioButton {
     -fx-font-family: 'Consolas';
     -fx-font-weight: bold;
     -fx-font-size: 20px;
-    -fx-background-color: red;
+    -fx-background-color: #e62e00;
     -fx-min-width: 175;
 }
 
 Button {
-    -fx-background-color: red ;
+    -fx-background-color: #e62e00 ;
     -fx-font-family: 'Consolas';
     -fx-font-size: 30;
     -fx-text-fill: black;
@@ -24,7 +24,7 @@ Button {
 Label {
 
     -fx-font-family: 'Consolas';
-    -fx-text-fill: red;
+    -fx-text-fill: #e62e00;
     -fx-font-size: 20px;
     -fx-font-weight: bold;
 
@@ -32,14 +32,14 @@ Label {
 
 CheckBox {
     -fx-font-family: 'Consolas';
-    -fx-text-fill: red;
+    -fx-text-fill: #e62e00;
 }
 
 TextField {
     -fx-text-fill: black;
     -fx-font-size: 15px;
     -fx-font-weight: bold;
-    -fx-background-color: red;
+    -fx-background-color: #e62e00;
     -fx-min-width: 150;
 }
 .radio-button:selected .radio .dot {
@@ -51,7 +51,7 @@ TextField {
 #titleText {
     -fx-font-family: 'Consolas';
     -fx-font-size: 40;
-    -fx-stroke: red;
+    -fx-stroke: #e62e00;
     -fx-stroke-width: 3;
 }
 
