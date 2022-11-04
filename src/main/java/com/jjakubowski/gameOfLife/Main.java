@@ -18,7 +18,7 @@ public class Main extends Application
         try {
             Parent root = FXMLLoader.load(getClass().getResource("mainView.fxml"));
             Scene scene = new Scene(root);
-            scene.getStylesheets().add(getClass().getResource("mainViewAppGREEN-BLACK.css").toExternalForm());
+            scene.getStylesheets().add(getClass().getResource("css/mainViewAppGREEN-BLACK.css").toExternalForm());
             primaryStage.setScene(scene);
             primaryStage.setTitle("GAME OF LIFE :> by JANEK JAKUBOWSKI");
             primaryStage.show();

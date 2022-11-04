@@ -72,8 +72,8 @@
                             <ToggleGroup fx:id="colorToggleGroup"/>
                         </fx:define>
                         <RadioButton mnemonicParsing="false" text="GREEN-BLACK" toggleGroup="$colorToggleGroup" selected="true"/>
-                        <RadioButton mnemonicParsing="false" text="BLUE-GREY" toggleGroup="$colorToggleGroup" />
-                        <RadioButton mnemonicParsing="false" text="RED-GREY" toggleGroup="$colorToggleGroup" />
+                        <RadioButton mnemonicParsing="false" text="BLUE-BLACK" toggleGroup="$colorToggleGroup" />
+                        <RadioButton mnemonicParsing="false" text="RED-BLACK" toggleGroup="$colorToggleGroup" />
                         <RadioButton mnemonicParsing="false" text="BLACK-WHITE" toggleGroup="$colorToggleGroup" />
                     </children>
                 </VBox>

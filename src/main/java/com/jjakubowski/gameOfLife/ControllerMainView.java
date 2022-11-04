@@ -42,7 +42,7 @@ public class ControllerMainView
                     radioButton.setOnAction(actionEvent -> {
                         Application.setUserAgentStylesheet(null);
                         radioButton.getScene().getStylesheets().clear();
-                        radioButton.getScene().getStylesheets().add(String.valueOf(getClass().getResource("mainViewApp" + radioButton.getText() + ".css")));
+                        radioButton.getScene().getStylesheets().add(String.valueOf(getClass().getResource("css/mainViewApp" + radioButton.getText() + ".css")));
                     });
                 }
             }
