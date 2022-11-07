@@ -38,7 +38,7 @@
         </VBox>
     </center>
     <bottom>
-        <Button mnemonicParsing="false" text="START!" BorderPane.alignment="CENTER" onAction="#newWindowButton">
+        <Button mnemonicParsing="false" text="START!" BorderPane.alignment="CENTER" onAction="#start">
             <BorderPane.margin>
                 <Insets bottom="50.0" />
             </BorderPane.margin>
