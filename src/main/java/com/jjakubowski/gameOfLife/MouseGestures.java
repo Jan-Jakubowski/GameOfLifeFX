@@ -11,16 +11,16 @@ public class MouseGestures
 {
     gameLogic gameLogic;
 
-    public MouseGestures(gameLogic gameLogic) {
+    public MouseGestures(gameLogic gameLogic)
+    {
         this.gameLogic = gameLogic;
     }
 
-    static boolean showHoverCursor = false;
-    public void makePaintable( Node node) {
-        // that's all there is needed for hovering, the other code is just for painting
+    static boolean showHoverCursor = false; // off hovering effect for now
+    public void makePaintable( Node node)
+    {
         if(showHoverCursor) {
             node.hoverProperty().addListener(new ChangeListener<Boolean>(){
-
                 @Override
                 public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
                     if( newValue) {
@@ -29,12 +29,10 @@ public class MouseGestures
                         ((Cell) node).hoverUnhighlight();
                     }
                 }
-
             });
         }
-
-        node.setOnMousePressed( onMousePressedEventHandler);
-        node.setOnDragDetected( onDragDetectedEventHandler);
+        node.setOnMousePressed(onMousePressedEventHandler);
+        node.setOnDragDetected(onDragDetectedEventHandler);
         node.setOnMouseReleased(onMouseReleasedEventHandler);
         node.setOnMouseDragEntered(onMouseDragEnteredEventHandler);
         node.setOnMouseDragReleased(onMouseReleasedEventHandler);
@@ -42,6 +40,7 @@ public class MouseGestures
     }
 
     EventHandler<MouseEvent> onMousePressedEventHandler = event -> {
+        gameLogic.stop();
         System.out.println("onMousePressedEventHandler");
         Cell cell = (Cell) event.getSource();
 
@@ -68,7 +67,6 @@ public class MouseGestures
             }
         }
         gameLogic.start();
-
     };
 
     EventHandler<MouseEvent> onMouseReleasedEventHandler = event -> {
@@ -82,7 +80,6 @@ public class MouseGestures
 
         Cell cell = (Cell) event.getSource();
         cell.startFullDrag();
-
     };
 
     EventHandler<MouseEvent> onMouseDragEnteredEventHandler = event -> {
