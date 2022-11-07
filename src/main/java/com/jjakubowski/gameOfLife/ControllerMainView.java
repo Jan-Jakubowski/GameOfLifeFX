@@ -7,11 +7,8 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.RadioButton;
-import javafx.scene.effect.DropShadow;
-import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 import java.util.Iterator;
@@ -54,6 +51,50 @@ public class ControllerMainView
             stage.setTitle("New Window");
             stage.setScene(scene);
             stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    public void start()
+    {
+        int rows = 15;
+        int columns = 20;
+        double width = 800;
+        double height = 600;
+
+        try {
+            StackPane root = new StackPane();
+            // create grid
+            Grid grid = new Grid( columns, rows, width, height);
+            gameLogic game = new gameLogic(grid);
+            MouseGestures mg = new MouseGestures(game);
+            // fill grid
+            for (int row = 0; row < rows; row++) {
+                for (int column = 0; column < columns; column++) {
+
+                    Cell cell = new Cell(column, row);
+                    mg.makePaintable(cell);
+
+                    if(Math.random() > 0.5)
+                        cell.highlight();
+                    grid.add(cell, column, row);
+                }
+            }
+            game.start();
+
+            root.getChildren().addAll(grid);
+            // create scene and stage
+            Scene scene = new Scene(root, width, height);
+            scene.getStylesheets().add(getClass().getResource("css/grid.css").toExternalForm());
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.show();
+
+
+
+
         } catch (Exception e) {
             e.printStackTrace();
         }
