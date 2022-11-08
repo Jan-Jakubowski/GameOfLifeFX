@@ -48,6 +48,7 @@ public class gameLogic extends AnimationTimer
             for (int j = 0; j < columns; j++)
             {
                 newGen[i][j] = new Cell(i,j);
+                cells[i][j].alive = grid.cells[i][j].alive;
             }
 
         }
