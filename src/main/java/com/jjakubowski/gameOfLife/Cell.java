@@ -1,8 +1,7 @@
 package com.jjakubowski.gameOfLife;
-
 import javafx.scene.layout.StackPane;
-
-public class Cell extends StackPane {
+public class Cell extends StackPane
+{
 
     int column;
     int row;
@@ -15,15 +14,11 @@ public class Cell extends StackPane {
         alive = false;
 
         getStyleClass().add("cell");
-
-//          Label label = new Label(this.toString());
-//
-//          getChildren().add(label);
         setOpacity(0.9);
     }
 
     public void highlight() {
-        alive = true;
+        this.alive = true;
         // ensure the style is only once in the style list
         getStyleClass().remove("cell-highlight");
         // add style
@@ -31,7 +26,7 @@ public class Cell extends StackPane {
     }
 
     public void unhighlight() {
-        alive = false;
+        this.alive = false;
         getStyleClass().remove("cell-highlight");
     }
 
