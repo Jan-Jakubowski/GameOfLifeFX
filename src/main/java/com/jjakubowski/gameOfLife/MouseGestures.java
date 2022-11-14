@@ -9,9 +9,9 @@ import javafx.scene.input.PickResult;
 
 public class MouseGestures
 {
-    gameLogic gameLogic;
+    GameLogic gameLogic;
 
-    public MouseGestures(gameLogic gameLogic)
+    public MouseGestures(GameLogic gameLogic)
     {
         this.gameLogic = gameLogic;
     }

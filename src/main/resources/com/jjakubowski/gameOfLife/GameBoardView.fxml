@@ -8,31 +8,31 @@
       fx:controller="com.jjakubowski.gameOfLife.GameBoardController"    >
 
     <!--Grid-->
-    <GridPane fx:id="gridPane" prefWidth="600.0" prefHeight="600.0"/>
+    <GridPane prefWidth="600.0" prefHeight="600.0"/>
     <!--Grid Info-->
     <HBox prefWidth="600.0" prefHeight="25.0" alignment="CENTER">
         <VBox alignment="CENTER" prefWidth="125">
             <HBox>
                 <Label text="Generation: "/>
-                <Label fx:id="generationLabelValue" text="0"/>
+                <Label text="0"/>
             </HBox>
         </VBox>
         <VBox alignment="CENTER" prefWidth="110">
             <HBox>
                 <Label text="Speed: "/>
-                <Label fx:id="gameSpeedLabelValue" text="V. Slow"/>
+                <Label text="V. Slow"/>
             </HBox>
         </VBox>
         <VBox alignment="CENTER" prefWidth="110">
             <HBox>
                 <Label text="State: "/>
-                <Label fx:id="gameStateLabelValue" text="Paused"/>
+                <Label text="Paused"/>
             </HBox>
         </VBox>
         <VBox alignment="CENTER" prefWidth="150">
             <HBox>
                 <Label text="Rule Set: "/>
-                <Label fx:id="ruleSetLabelValue" text="Standard"/>
+                <Label text="Standard"/>
             </HBox>
         </VBox>
     </HBox>

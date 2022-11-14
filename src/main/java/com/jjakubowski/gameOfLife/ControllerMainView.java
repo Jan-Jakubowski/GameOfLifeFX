@@ -15,11 +15,12 @@ import java.util.Iterator;
 
 public class ControllerMainView
 {
+    public static String schemeColor;
 
     @FXML
     private VBox vBox1;
 
-    public void initialize()
+    public void initialize() // method takes care of real time changing color scheme on mainView
     {
         Iterator<Node> nodes = vBox1.getChildren().iterator();
         while (nodes.hasNext())
@@ -34,50 +35,33 @@ public class ControllerMainView
                         Application.setUserAgentStylesheet(null);
                         radioButton.getScene().getStylesheets().clear();
                         radioButton.getScene().getStylesheets().add(String.valueOf(getClass().getResource("css/mainViewApp" + radioButton.getText() + ".css")));
+                        schemeColor = radioButton.getText();
                     });
                 }
             }
         }
     }
-
-
-    @FXML
-    public void newWindowButton() {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader();
-            Parent root = FXMLLoader.load(getClass().getResource("GameBoardView.fxml"));
-            Scene scene = new Scene(root);
-            Stage stage = new Stage();
-            stage.setTitle("New Window");
-            stage.setScene(scene);
-            stage.show();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
     @FXML
     public void start()
     {
-        int rows = 15;
-        int columns = 20;
-        double width = 800;
-        double height = 600;
-
-        try {
+        int rows = 40;
+        int columns = 40;
+        double width = 900;
+        double height = 850;
+        try
+        {
             StackPane root = new StackPane();
-            // create grid
             Grid grid = new Grid( columns, rows, width, height);
-            gameLogic game = new gameLogic(grid);
+            GameLogic game = new GameLogic(grid);
             MouseGestures mg = new MouseGestures(game);
-            // fill grid
+            // fill grid randomly
             for (int row = 0; row < rows; row++) {
                 for (int column = 0; column < columns; column++) {
 
                     Cell cell = new Cell(column, row);
                     mg.makePaintable(cell);
 
-                    if(Math.random() > 0.5)
+                    if(Math.random() > 0.5) // number of alive cells at start can be adjusted here
                         cell.highlight();
                     grid.add(cell, column, row);
                 }
@@ -91,10 +75,6 @@ public class ControllerMainView
             Stage stage = new Stage();
             stage.setScene(scene);
             stage.show();
-
-
-
-
         } catch (Exception e) {
             e.printStackTrace();
         }
