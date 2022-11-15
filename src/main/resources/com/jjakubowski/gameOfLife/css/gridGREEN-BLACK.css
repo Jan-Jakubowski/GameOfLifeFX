@@ -1,10 +1,11 @@
 .cell {
-    -fx-border-color: dodgerblue;
+    -fx-border-color: black;
     -fx-border-width: 1px;
+    -fx-background-color: black;
 }
 .cell-highlight {
     /*-fx-background-color:derive(black,90%);*/
-    -fx-background-color:black;
+    -fx-background-color:green;
 }
 .cell-hover-highlight {
     -fx-background-color:derive(green,90%);

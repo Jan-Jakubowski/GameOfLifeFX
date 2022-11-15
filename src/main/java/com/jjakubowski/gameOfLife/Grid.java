@@ -47,4 +47,16 @@ public class Grid extends Pane
             }
         }
     }
+    public void highlightRandom()
+    {
+        for( int row=0; row < rows; row++) {
+            for( int col=0; col < columns; col++)
+            {
+                if(Math.random() > 0.5)
+                    cells[row][col].highlight();
+                else
+                    cells[row][col].unhighlight();
+            }
+        }
+    }
 }

@@ -14,24 +14,15 @@
         </Text>
     </top>
     <center>
-        <VBox alignment="CENTER" fillWidth="false" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="TOP_CENTER">
+        <VBox alignment="CENTER" fillWidth="false" prefHeight="200.0" prefWidth="100.0" spacing="50.0" BorderPane.alignment="TOP_CENTER">
             <children>
-                <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
-                    <children>
-                        <Label text="HEIGHT:" />
-                        <TextField alignment="CENTER" text="400" />
-                    </children>
-                </VBox>
-                <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
-                    <children>
-                        <Label text="WIDTH:" />
-                        <TextField alignment="CENTER" text="600" />
-                    </children>
-                </VBox>
-                <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+                <Label text="&quot;SPACE&quot; -&gt; STOP" />
+                <Label text="&quot;C&quot; -&gt; CLEAR" />
+                <Label text="&quot;R&quot; -&gt; RANDOMIZE" />
+                <VBox alignment="CENTER">
                     <children>
                         <Label text="GRID SIZE:" />
-                        <TextField alignment="CENTER" text="25" />
+                        <TextField fx:id="gridSize" alignment="CENTER" text="25" />
                     </children>
                 </VBox>
             </children>

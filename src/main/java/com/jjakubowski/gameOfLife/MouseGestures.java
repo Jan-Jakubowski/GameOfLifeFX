@@ -4,13 +4,13 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.PickResult;
 
 public class MouseGestures
 {
-    GameLogic gameLogic;
-
+    private GameLogic gameLogic;
     public MouseGestures(GameLogic gameLogic)
     {
         this.gameLogic = gameLogic;
@@ -66,12 +66,14 @@ public class MouseGestures
                 cell.unhighlight();
             }
         }
-        gameLogic.start();
+        if(!gameLogic.paused)
+            gameLogic.start();
     };
 
     EventHandler<MouseEvent> onMouseReleasedEventHandler = event -> {
 //        System.out.println("onMouseReleasedEventHandler");
-        gameLogic.start();
+        if(!gameLogic.paused)
+            gameLogic.start();
     };
 
     EventHandler<MouseEvent> onDragDetectedEventHandler = event -> {
@@ -93,5 +95,6 @@ public class MouseGestures
         }
 
     };
-    //todo: event handler ze start();
+
+
 }

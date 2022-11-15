@@ -47,6 +47,13 @@ TextField {
     -fx-background-insets: 0;
 }
 
+Text {
+    -fx-text-fill: #0FFF00;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-background-color: #0FFF00;
+}
+
 
 #titleText {
     -fx-font-family: 'Consolas';
@@ -54,4 +61,5 @@ TextField {
     -fx-stroke: #0FFF00;
     -fx-stroke-width: 3;
 }
+
 

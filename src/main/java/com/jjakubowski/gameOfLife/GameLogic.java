@@ -7,6 +7,7 @@ public class GameLogic extends AnimationTimer
     int columns;
     int rows;
     Cell[][] cells;
+    boolean paused = false;
     public GameLogic(Grid grid) {
         this.grid = grid;
         this.columns = grid.columns;
@@ -93,5 +94,21 @@ public class GameLogic extends AnimationTimer
             return 1;
 
         return 0;
+    }
+
+    public void setPaused()
+    {
+        if(paused)
+        {
+            System.out.println("starting");
+            paused=false;
+            start();
+        }
+        else
+        {
+            System.out.println("pausing");
+            paused=true;
+            stop();
+        }
     }
 }
