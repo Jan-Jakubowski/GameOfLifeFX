@@ -38,16 +38,16 @@
     <right>
         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="250.0" BorderPane.alignment="CENTER">
             <children>
-                <Label text="GAME PATTERNS:" />
+                <Label text="GAME SPEED:" />
                 <VBox alignment="CENTER" prefHeight="200.0" prefWidth="115.0" spacing="80.0" VBox.vgrow="ALWAYS">
                     <children>
                         <fx:define>
-                            <ToggleGroup fx:id="patternsToggleGroup"/>
+                            <ToggleGroup fx:id="gameSpeedToggleGroup"/>
                         </fx:define>
-                        <RadioButton mnemonicParsing="false" text="RANDOM" toggleGroup="$patternsToggleGroup" selected="true"/>
-                        <RadioButton mnemonicParsing="false" text="OPTION 2" toggleGroup="$patternsToggleGroup"/>
-                        <RadioButton mnemonicParsing="false" text="OPTION 3" toggleGroup="$patternsToggleGroup"/>
-                        <RadioButton mnemonicParsing="false" text="OPTION 4" toggleGroup="$patternsToggleGroup"/>
+                        <RadioButton mnemonicParsing="false" text="100 ms" toggleGroup="$gameSpeedToggleGroup" selected="true" userData="100"/>
+                        <RadioButton mnemonicParsing="false" text="200 ms" toggleGroup="$gameSpeedToggleGroup" userData="200"/>
+                        <RadioButton mnemonicParsing="false" text="500 ms" toggleGroup="$gameSpeedToggleGroup" userData="500"/>
+                        <RadioButton mnemonicParsing="false" text="1000 s" toggleGroup="$gameSpeedToggleGroup" userData="1000"/>
                     </children>
                 </VBox>
             </children>

@@ -5,7 +5,7 @@
 }
 .cell-highlight {
     /*-fx-background-color:derive(black,90%);*/
-    -fx-background-color:green;
+    -fx-background-color:#0FFF00;
 }
 .cell-hover-highlight {
     -fx-background-color:derive(green,90%);

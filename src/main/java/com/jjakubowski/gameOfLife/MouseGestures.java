@@ -41,7 +41,6 @@ public class MouseGestures
 
     EventHandler<MouseEvent> onMousePressedEventHandler = event -> {
         gameLogic.stop();
-//        System.out.println("onMousePressedEventHandler");
         Cell cell = (Cell) event.getSource();
 
         if( event.isPrimaryButtonDown()) {
@@ -52,7 +51,6 @@ public class MouseGestures
     };
 
     EventHandler<MouseEvent> onMouseDraggedEventHandler = event -> {
-//        System.out.println("onMouseDraggedEventHandler");
         gameLogic.stop();
         PickResult pickResult = event.getPickResult();
         Node node = pickResult.getIntersectedNode();
@@ -71,13 +69,11 @@ public class MouseGestures
     };
 
     EventHandler<MouseEvent> onMouseReleasedEventHandler = event -> {
-//        System.out.println("onMouseReleasedEventHandler");
         if(!gameLogic.paused)
             gameLogic.start();
     };
 
     EventHandler<MouseEvent> onDragDetectedEventHandler = event -> {
-//        System.out.println("onDragDetectedEventHandler");
         gameLogic.stop();
 
         Cell cell = (Cell) event.getSource();
@@ -85,15 +81,12 @@ public class MouseGestures
     };
 
     EventHandler<MouseEvent> onMouseDragEnteredEventHandler = event -> {
-//        System.out.println("onMouseDragEnteredEventHandler");
         Cell cell = (Cell) event.getSource();
         gameLogic.stop();
-        if( event.isPrimaryButtonDown()) {
+        if(event.isPrimaryButtonDown())
             cell.highlight();
-        } else if( event.isSecondaryButtonDown()) {
+        else if( event.isSecondaryButtonDown())
             cell.unhighlight();
-        }
-
     };
 
 

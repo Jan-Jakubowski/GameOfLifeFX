@@ -8,18 +8,20 @@ public class GameLogic extends AnimationTimer
     int rows;
     Cell[][] cells;
     boolean paused = false;
-    public GameLogic(Grid grid) {
+    int speed;
+    public GameLogic(Grid grid, int speed) {
         this.grid = grid;
         this.columns = grid.columns;
         this.rows = grid.rows;
         this.cells = grid.cells;
+        this.speed = speed;
     }
 
     public void handle(long now) // method form AnimationTimer class, what happens every iteration
     {
         try
         {
-            Thread.sleep(100); // 1000ms = 1s, adjustable to preferences
+            Thread.sleep(speed); // 1000ms = 1s, adjustable to preferences
             nextGeneration();
         }
         catch (InterruptedException e)
@@ -100,13 +102,11 @@ public class GameLogic extends AnimationTimer
     {
         if(paused)
         {
-            System.out.println("starting");
             paused=false;
             start();
         }
         else
         {
-            System.out.println("pausing");
             paused=true;
             stop();
         }
