@@ -26,7 +26,11 @@ public class ControllerMainView
     @FXML
     private ToggleGroup gameSpeedToggleGroup;
 
-    public static String schemeColor = "GREEN-BLACK";
+    @FXML
+    private ToggleGroup colorToggleGroup;
+
+    static String schemeColor;
+
 
     public void initialize() // method takes care of real time changing color scheme on mainView
     {
@@ -42,8 +46,8 @@ public class ControllerMainView
                     radioButton.setOnAction(actionEvent -> {
                         Application.setUserAgentStylesheet(null);
                         radioButton.getScene().getStylesheets().clear();
-                        radioButton.getScene().getStylesheets().add(String.valueOf(getClass().getResource("css/mainViewApp" + radioButton.getText() + ".css")));
-                        schemeColor = radioButton.getText();
+                        schemeColor = colorToggleGroup.getSelectedToggle().getUserData().toString();
+                        radioButton.getScene().getStylesheets().add(String.valueOf(getClass().getResource("css/mainViewApp" + schemeColor + ".css")));
                     });
                 }
             }
@@ -98,7 +102,7 @@ public class ControllerMainView
             Scene scene = new Scene(root, windowWidth, windowHeight);
             scene.getStylesheets().add(getClass().getResource("css/grid" + schemeColor + ".css").toExternalForm());
             Stage stage = new Stage();
-            stage.setTitle("GAME OF LIFE BY JJ & stackOverflow <3");
+            stage.setTitle("GAME OF LIFE BY JJ & StackOverflow <3");
             stage.setScene(scene);
             stage.show();
             stage.setOnCloseRequest(event -> {
