@@ -29,7 +29,7 @@ public class ControllerMainView
     @FXML
     private ToggleGroup colorToggleGroup;
 
-    static String schemeColor;
+    static String schemeColor = "Green";
 
 
     public void initialize() // method takes care of real time changing color scheme on mainView
